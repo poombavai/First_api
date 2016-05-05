@@ -1,0 +1,32 @@
+<body bgcolor="Tan"><center>
+<font face="monotype corsiva" color="purple"><br>
+<br>
+<h3>Welcome to the Registration Page</h3>
+<table border=2 bgcolor="Teal"><b><br>
+Enter your Details<br><br>
+<font face="Lucida Calligraphy" color="DarkRed">
+<%= form_for @product do | i | %>
+<tr>
+<td><%= i.label :b_name, "Brand Name" %></td>
+<td><%= i.text_field :b_name%></td>
+</tr>
+<tr>
+<td><%= i.label :details%></td>
+<td><%= i.text_area :details%></td>
+</tr>
+<tr>
+<td><%= i.label :price%></td>
+<td><%= i.text_field :price%></td>
+</tr>
+<%= i.fields_for :image do |img|%>
+<td><%= img.label :photo %></td>
+<td><%= img.file_field :photo, :multiple=>true %></td>
+<% end %>
+<tr>
+<td><%= i.submit "Add"%></td>
+</tr>
+<%end%>
+</font></b>
+</table>
+</font></center>
+</body>

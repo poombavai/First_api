@@ -1,0 +1,32 @@
+<body bgcolor="BurlyWood">
+<center>
+<font face="Lucida Calligraphy" color="FireBrick">
+<h4> Edit your details here</h4>
+<table border=2 bgcolor="DarkGoldenRod">
+<%= form_for @product do | i | %>
+<tr>
+<td><%= i.label :b_name, "Brand Name"%></td>
+<td><%= i.text_field :b_name%></td>
+</tr>
+<tr>
+<td><%= i.label :details%></td>
+<td><%= i.text_area :details%></td>
+</tr>
+<tr>
+<td><%= i.label :price%></td>
+<td><%= i.text_field :price%></td>
+</tr>
+<tr>
+<%= i.fields_for :image do |img|%>
+<td><%= img.label :photo %></td>
+<td><%= img.file_field :photo, :multiple=>true %></td>
+<% end %>
+<br>
+<tr>
+<td><%= i.submit "Done" %></td>
+</tr>
+<%end%>
+</table>
+</font>
+</center>
+</body>

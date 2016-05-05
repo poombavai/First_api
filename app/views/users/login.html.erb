@@ -1,0 +1,24 @@
+<body bgcolor="Pink">
+<center><font face="monotype corsiva" color="Maroon" >
+<h1>Welcome to Login page</h1>
+<h2>Sign in</h2>
+<%= form_for([@user], :url=>{:controller=>"users", :action => "validate_login"}, :method => "put") do |i| %>
+<table border=2 bgcolor="teal">
+<font face="monotype corsiva" color="Black" >
+<tr>
+<td><%= i.label :name,"Username"%></td>
+<td><%= i.text_field :name%></td>
+</tr>
+<tr>
+<td><%= i.label :password%></td>
+<td><%= i.password_field :password%></td>
+</tr>
+<tr>
+<td><%= i.submit "Login" %></td>
+</tr></table><br>
+<br>
+<%= link_to "New User? Register here", new_user_path %>
+<%end%>
+</font>
+</center>
+</body>

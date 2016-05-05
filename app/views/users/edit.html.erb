@@ -1,0 +1,35 @@
+<body bgcolor="BurlyWood">
+<center>
+<font face="Lucida Calligraphy" color="FireBrick">
+<h4> Edit your details here</h4>
+<table border=2 bgcolor="DarkGoldenRod">
+<%= form_for @user do | i | %>
+<tr>
+<td><%= i.label :name%></td>
+<td><%= i.text_field :name%></td>
+</tr>
+<tr>
+<td><%= i.label :email%></td>
+<td><%= i.text_field :email%></td>
+</tr>
+<tr>
+<td><%= i.label :password%></td>
+<td><%= i.password_field :password%></td>
+</tr>
+<tr>
+<td><%= i.label :phone, "Mobile No."%></td>
+<td><%= i.text_field :phone%></td>
+</tr>
+<tr><%= i.fields_for :image do |img|%>
+<td><%= img.label :photo %></td>
+<td><%= img.file_field :photo %></td></tr>
+<% end %><br>
+<br>
+<tr>
+<td><%= i.submit "Done" %></td>
+</tr>
+<%end%>
+</table>
+</font>
+</center>
+</body>

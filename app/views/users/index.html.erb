@@ -1,0 +1,35 @@
+<body bgcolor="Coral">
+<font face="Times New Roman" color="Purple">
+<center>
+<h2><p>Welcome<br><br>
+User Details <br></p></h2><h3>
+<font face="lucida calligraphy" color="Teal">
+<table border=4 bgcolor="wheat">
+<tr bgcolor="BurlyWood">
+<td>Image</td>
+<td>Name</td>
+<td>Email</td>
+<td>Mobile no</td>
+</tr>
+<% @user.each do |i| %>
+<tr>
+<td><%= image_tag i.image.photo if not i.image.blank? %></td>
+<td><%= i.name%></td>
+<td><%= i.email%></td>
+<td><%= i.phone%></td>
+<td><%= link_to "Show", user_path(i)%></td>
+<td><%= link_to "Edit", edit_user_path(i)%></td>
+<td><%= link_to "Delete", i, :method=>"delete", :data => {:confirm=>"Are you sure!"}%></td>
+</tr>
+<%end%>
+</table></font>
+<br>
+<br><b>
+<%= link_to "Add New User",new_user_path %><br><br>
+<%= link_to "Have an Account? Sign in", users_login_path %></b>
+</h3>
+</center>
+</font>
+</body>
+
+

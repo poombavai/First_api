@@ -1,0 +1,38 @@
+<body bgcolor="Tan"><center>
+<font face="monotype corsiva" color="purple"><br>
+<h2>Welcome to the Registration Page</h2>
+<h3 align="right">
+<%= link_to 'Back', {:action => 'index'} %>
+</h3>
+<table border=2 bgcolor="Teal"><b><br>
+Enter your Details<br><br>
+<font face="Lucida Calligraphy" color="DarkRed">
+<%= form_for @user do | i | %>
+<tr>
+<td><%= i.label :name%></td>
+<td><%= i.text_field :name%></td>
+</tr>
+<tr>
+<td><%= i.label :email%></td>
+<td><%= i.text_field :email%></td>
+</tr>
+<tr>
+<td><%= i.label :password%></td>
+<td><%= i.password_field :password%></td>
+</tr>
+<tr>
+<td><%= i.label :phone, "Mobile No."%></td>
+<td><%= i.text_field :phone%></td>
+</tr>
+<%= i.fields_for :image do |img|%>
+<td><%= img.label :photo %></td>
+<td><%= img.file_field :photo %></td>
+<% end %>
+<tr>
+<td><%= i.submit "Register" %></td>
+</tr>
+<%end%>
+</font></b>
+</table>
+</font></center>
+</body>
